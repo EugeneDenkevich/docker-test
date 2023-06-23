@@ -1,0 +1,19 @@
+name: my-first-commit
+
+on:
+    push:
+        branches:
+            - flask
+
+jobs:
+    first-build:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Print Hello Message
+          run: echo "Hello, World from first-build"
+
+    second-build:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Print Hello Message
+          run: echo "Hello, World from second-build"
