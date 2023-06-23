@@ -1,0 +1,7 @@
+
+name: my-first-action
+
+on:
+  push:
+    branches:
+      - flask
