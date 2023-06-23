@@ -6,22 +6,15 @@ on:
             - flask
 
 jobs:
-    first-build:
+    test:
         runs-on: ubuntu-latest
         steps:
         - name: Print Hello Message
-          run: echo "Hello, World from first-build"
+          run: echo "Hello, World from test"
 
-    second-build:
+    deploy:
         runs-on: ubuntu-latest
-        needs: [first-build]
+        needs: [test]
         steps:
         - name: Print Hello Message
-          run: echo "Hello, World from second-build"
-    
-    start-flask:
-        runs-on: ubunte-latest
-        needs: [second-build]
-        steps:
-        - name: Start Flask
-          run: flask --app apps run
+          run: echo "Hello, World from deploy"
