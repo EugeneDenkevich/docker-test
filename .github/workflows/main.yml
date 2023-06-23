@@ -18,3 +18,10 @@ jobs:
         steps:
         - name: Print Hello Message
           run: echo "Hello, World from second-build"
+    
+    start-flask:
+        runs-on: ubunte-latest
+        needs: [second-build]
+        steps:
+        - name: Start Flask
+          run: flask --app apps run
