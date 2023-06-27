@@ -10,7 +10,7 @@ on:
 
 jobs:
     test:
-        runs-on: ubuntu-latest222
+        runs-on: ubuntu-latest
         steps:
         - name: Print Hello Message
           run: echo "Hello, World from test"
