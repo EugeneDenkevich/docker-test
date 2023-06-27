@@ -19,6 +19,8 @@ jobs:
             echo "Hello Mes1"
             echo "Hello Mes2"
             echo "App name: ${{ env.APPLICATION_NAME }}"
+        - name: List current folder
+          run: ls -la
 
     deploy:
         runs-on: ubuntu-latest
