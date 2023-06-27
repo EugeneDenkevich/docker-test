@@ -11,26 +11,44 @@ on:
 jobs:
     test:
         runs-on: ubuntu-latest
+
         steps:
         - name: Print Hello Message
           run: echo "Hello, World from test"
+
         - name: Execute few commands
           run: |
             echo "Hello Mes1"
             echo "Hello Mes2"
             echo "App name: ${{ env.APPLICATION_NAME }}"
-        - name: List current folder
+
+        - name: Check empty folder
+          run: ls -la
+
+        - name: Clone Git
+          uses: actions/checkout@v1
+
+        - name: List not empty folder
           run: ls -la
 
     deploy:
         runs-on: ubuntu-latest
+
         needs: [test]
+
         steps:
         - name: Print Hello Message
           run: echo "Hello, World from deploy"
+
         - name: Print dep packege name
           run: |
             echo "Hello Messgae 1"
             echo "Hello Message 2"
             echo "Hello Message 3"
             echo "Dep ver ${{ env.DEPLOY_PACKAGE_NAME }}"
+        
+        - name: Test some packeges if they are here 1
+          run: aws --version
+
+        - name: Test some packages if they are here 2
+          run: zip
